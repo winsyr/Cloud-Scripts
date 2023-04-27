@@ -32,7 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="/Users/ryan.winstanley/code/winsyr/winsyr.png">
+  <a href="https://github.com/winsyr/aws">
     <img src="/Users/ryan.winstanley/code/winsyr/winsyr.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -79,7 +79,6 @@ Clone and use any script within the repository. Ensure you use your own username
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 
 <!-- CONTACT -->
 ## Contact
