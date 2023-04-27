@@ -1,0 +1,79 @@
+import boto3
+import openpyxl
+
+# Set the following variables according to your organization and requirements
+ORG_ID = 'your_org_id'
+ROLE_NAME = 'YourRoleName'
+SESSION_NAME = 'session_name'
+OUTPUT_FILE_NAME = 'aws_accounts_users_roles.xlsx'
+
+
+# List all accounts in the organization
+client = boto3.client('organizations')
+accounts = []
+next_token = None
+while True:
+    if next_token:
+        response = client.list_accounts(NextToken=next_token)
+    else:
+        response = client.list_accounts()
+    accounts += response['Accounts']
+    if 'NextToken' in response:
+        next_token = response['NextToken']
+    else:
+        break
+
+# Create a workbook and worksheet
+wb = openpyxl.Workbook()
+ws = wb.active
+
+# Write headers to the worksheet
+headers = ['Account ID', 'Region', 'User/Role/Service Account Name', 'User/Role/Service Account ARN', 'User/Role/Service Account Type']
+ws.append(headers)
+
+# Iterate through all accounts and resources
+for account in accounts:
+    # Assume role in the account
+    sts_client = boto3.client('sts')
+    assumed_role = sts_client.assume_role(
+        RoleArn=f"arn:aws:iam::{account['Id']}:role/{ROLE_NAME}",
+        RoleSessionName=SESSION_NAME
+    )
+    credentials = assumed_role['Credentials']
+    session = boto3.Session(
+        aws_access_key_id=credentials['AccessKeyId'],
+        aws_secret_access_key=credentials['SecretAccessKey'],
+        aws_session_token=credentials['SessionToken']
+    )
+
+    # Iterate through all regions in the account
+    for region in session.get_available_regions():
+        # Get the IAM client for the region
+        iam_client = session.client('iam', region_name=region)
+
+        # List all IAM users
+        try:
+            response = iam_client.list_users()
+            for user in response['Users']:
+                ws.append([account['Id'], region, user['UserName'], user['Arn'], 'User'])
+        except Exception as e:
+            print(f"Error listing IAM users in account {account['Id']} and region {region}: {e}")
+
+        # List all IAM roles
+        try:
+            response = iam_client.list_roles()
+            for role in response['Roles']:
+                ws.append([account['Id'], region, role['RoleName'], role['Arn'], 'Role'])
+        except Exception as e:
+            print(f"Error listing IAM roles in account {account['Id']} and region {region}: {e}")
+
+        # List all service accounts
+        try:
+            response = iam_client.list_roles(PathPrefix='/service-role/')
+            for role in response['Roles']:
+                ws.append([account['Id'], region, role['RoleName'], role['Arn'], 'Service Account'])
+        except Exception as e:
+            print(f"Error listing service accounts in account {account['Id']} and region {region}: {e}")
+
+# Save the workbook to a file
+wb.save(OUTPUT_FILE_NAME)
