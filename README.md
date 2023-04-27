@@ -65,6 +65,9 @@ Clone and use any script within the repository. Ensure you use your own username
 
 1. Python3
 2. AWS credentials 
+3. GCP credentials
+4. Azure credentials 
+5. Access/config of Cloud SDKs
 
 <!-- LICENSE -->
 ## License
