@@ -33,7 +33,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/winsyr/AWS">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="/Users/ryan.winstanley/code/winsyr/winsyr.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">AWS Scripts</h3>
@@ -64,8 +64,6 @@
 A collection of AWS scripts to support operational and security capability within the CSP.
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -82,7 +80,6 @@ Clone and use any script within the repository. Ensure you use your own username
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
