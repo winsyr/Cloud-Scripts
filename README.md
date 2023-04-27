@@ -34,7 +34,7 @@
 <h3 align="center">AWS Scripts</h3>
 
   <p align="center">
-    A collection of AWS scripts.
+    A collection of cloud scripts.
     <br />
 
 
