@@ -31,7 +31,7 @@
 
 <!-- PROJECT LOGO -->
 
-<h3 align="center">AWS Scripts</h3>
+<h3 align="center">Scripts</h3>
 
   <p align="center">
     A collection of cloud scripts.
