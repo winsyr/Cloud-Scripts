@@ -32,7 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/winsyr/AWS">
+  <a href="/Users/ryan.winstanley/code/winsyr/winsyr.png">
     <img src="/Users/ryan.winstanley/code/winsyr/winsyr.png" alt="Logo" width="80" height="80">
   </a>
 
