@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A collection of AWS scripts to support operational and security capability within the CSP.
+A collection of scripts to support operational and security capability cloud platforms.
 
 
 
