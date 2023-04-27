@@ -33,7 +33,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/winsyr/aws">
-    <img src="/winsyr.png" alt="Logo" width="80" height="80">
+    <img src="winsyr.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">AWS Scripts</h3>
@@ -47,13 +47,11 @@
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
-  <ol>
     <li><a href="#about-the-project">About The Project</a>
     <li><a href="#getting-started">Getting Started</a>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-  </ol>
 </details>
 
 
