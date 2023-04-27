@@ -49,7 +49,6 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a>
-    <li><a href="#built-with">Built With</a></li>
     <li><a href="#getting-started">Getting Started</a>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#license">License</a></li>
@@ -62,7 +61,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+A collection of AWS scripts to support operational and security capability within the CSP.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
