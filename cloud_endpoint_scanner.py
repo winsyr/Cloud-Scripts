@@ -2,6 +2,9 @@ import nmap
 import json
 from tqdm import tqdm
 
+# This one was tricky - if anyone has a way of not using admin (sudo required), 
+# declaring the variables at the top, please shout. Update your cloud_scanner_input before use, find results in cloud_scanner_output.
+
 # Read input data from JSON file
 with open('cloud_scanner_input.json') as f:
     data = json.load(f)
